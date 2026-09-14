@@ -1,8 +1,8 @@
 NAME = animal
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp
-INC = Animal.hpp Cat.hpp Dog.hpp
+SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
+INC = Animal.hpp Cat.hpp Dog.hpp Brain.cpp
 
 all: $(NAME)
 
