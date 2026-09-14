@@ -17,6 +17,7 @@ public:
 
 	std::string getType(void) const;
 	virtual void makeSound(void) const;
+	virtual void checkBrain(void) const = 0;
 };
 
 #endif

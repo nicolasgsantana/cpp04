@@ -32,3 +32,8 @@ void Cat::makeSound(void) const
 {
 	std::cout << this->m_type << " says: Meow" << std::endl;
 }
+
+void Cat::checkBrain(void) const
+{
+	std::cout << "brain address: " << &this->m_brain << std::endl;
+}

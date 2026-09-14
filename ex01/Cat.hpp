@@ -17,6 +17,7 @@ public:
 	~Cat(void);
 
 	void makeSound(void) const;
+	void checkBrain(void) const;
 };
 
 #endif

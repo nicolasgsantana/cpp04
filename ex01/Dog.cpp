@@ -32,3 +32,8 @@ void Dog::makeSound(void) const
 {
 	std::cout << this ->m_type << " says: Woof woof" << std::endl;
 }
+
+void Dog::checkBrain(void) const
+{
+	std::cout << "brain address: " << &this->m_brain << std::endl;
+}
