@@ -1,42 +1,49 @@
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 #include <iostream>
 
-int main()
+int main(void)
 {
-	const Animal *meta = new Animal();
-	const Animal *j = new Dog();
-	const Animal *i = new Cat();
+	Animal *animals[10];
+	std::cout << "\n CREATE ANIMALS \n" << std::endl;
+	for (int i = 0; i < 10; i++)
+	{
+		if (i < 5)
+			animals[i] = new Dog();
+		else
+			animals[i] = new Cat();
+	}
 
-	std::cout << meta->getType() << " " << std::endl;
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
+	std::cout << "\n DELETE ANIMALS \n" << std::endl;
+	for (int i = 0; i < 10; i++)
+		delete animals[i];
 
-	j->makeSound();
-	i->makeSound();
-	meta->makeSound();
+	std::cout << "\n CHECK FOR SHALLOW COPIES --DOG--\n" << std::endl;
+	Dog d1;
+	Dog d2 = d1;
+	std::cout << "Dog 1: " << std::flush;
+	d1.checkBrain();
+	std::cout << "Dog 2: " << std::flush;
+	d2.checkBrain();
 
-	delete meta;
-	delete j;
-	delete i;
+	std::cout << "\n CHECK FOR SHALLOW COPIES --CAT--\n" << std::endl;
+	Cat c1;
+	Cat c2 = c1;
+	std::cout << "Cat 1: " << std::flush;
+	c1.checkBrain();
+	std::cout << "Cat 2: " << std::flush;
+	c2.checkBrain();
 
-	const WrongAnimal *wrongAnimal = new WrongAnimal();
-	const WrongAnimal *wrongCat = new WrongCat();
+	std::cout << "\n CHECK '=' OPERATOR --CAT--\n" << std::endl;
+	Cat c3;
+	c3 = c1;
+	std::cout << "Cat 1: " << std::flush;
+	c1.checkBrain();
+	std::cout << "Cat 3: " << std::flush;
+	c3.checkBrain();
 
-	std::cout << wrongAnimal->getType() << " " << std::endl;
-	std::cout << wrongCat->getType() << " " << std::endl;
+	std::cout << "\n END \n" << std::endl;
 
-	wrongAnimal->makeSound();
-	wrongCat->makeSound();
-
-	delete wrongAnimal;
-	delete wrongCat;
-
-	const WrongCat realWrongCat;
-
-	std::cout << realWrongCat.getType() << " " << std::endl;
-	realWrongCat.makeSound();
+	return (0);
 }
