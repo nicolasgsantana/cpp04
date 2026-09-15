@@ -32,3 +32,8 @@ void Animal::makeSound(void) const
 {
 	std::cout << this->m_type << " says: Unspecified sound" << std::endl;
 }
+
+void Animal::checkBrain(void) const
+{
+	std::cout << "I don't have a brain" << std::endl;
+}
