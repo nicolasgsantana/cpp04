@@ -1,4 +1,4 @@
-NAME = fire
+NAME = abstract
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
